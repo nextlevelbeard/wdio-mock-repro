@@ -10,12 +10,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 mock('@auth0/auth0-react', async (origModuleFactory) => {
 
     // Comment this line and test passes
-    // const originalModule = await origModuleFactory()
+    const originalModule = await origModuleFactory()
 
     return {
         __esModule: true,
         // Comment this line and test passes
-        // ...originalModule,
+        ...originalModule,
         useAuth0: fn(),
     }
 })
